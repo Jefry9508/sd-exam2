@@ -20,6 +20,10 @@ services:
            window: 120s
       mode: replicated
       replicas: 4
+      resources:
+        limits:
+          cpus: "0.1" #restricción de cpu de 10%
+          memory: 20M # Restricción de memoria de 20M
       placement:
         constraints: [node.role == worker]
       update_config:
